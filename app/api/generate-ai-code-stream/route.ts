@@ -90,8 +90,8 @@ declare global {
 
 export async function POST(request: NextRequest) {
   try {
-    const { prompt, model = 'openai/gpt-oss-20b', context, isEdit = false } = await request.json();
-    
+    const { prompt, context, isEdit = false } = await request.json();
+    const model = 'openai/gpt-4.1'
     console.log('[generate-ai-code-stream] Received request:');
     console.log('[generate-ai-code-stream] - prompt:', prompt);
     console.log('[generate-ai-code-stream] - isEdit:', isEdit);
